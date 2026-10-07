@@ -2,7 +2,7 @@ package telegramium.bots
 
 sealed trait InputRichBlock {}
 
-/** A table, corresponding to the HTML tag <table>.
+/** A table, corresponding to the HTML tag &lt;table&gt;.
   *
   * @param cells
   *   Cells of the table
@@ -23,14 +23,14 @@ final case class InputRichBlockTable(
   caption: Option[RichText] = Option.empty
 ) extends InputRichBlock
 
-/** A block with an anchor, corresponding to the HTML tag <a> with the attribute name.
+/** A block with an anchor, corresponding to the HTML tag &lt;a&gt; with the attribute name.
   *
   * @param name
   *   The name of the anchor
   */
 final case class InputRichBlockAnchor(name: String) extends InputRichBlock
 
-/** A block with a voice note, corresponding to the HTML tag <audio>.
+/** A block with a voice note, corresponding to the HTML tag &lt;audio&gt;.
   *
   * @param voiceNote
   *   The voice note. Caption is ignored.
@@ -42,21 +42,21 @@ final case class InputRichBlockVoiceNote(
   caption: Option[RichBlockCaption] = Option.empty
 ) extends InputRichBlock
 
-/** A list of blocks, corresponding to the HTML tag <ul> or <ol> with multiple nested tags <li>.
+/** A list of blocks, corresponding to the HTML tag &lt;ul&gt; or &lt;ol&gt; with multiple nested tags &lt;li&gt;.
   *
   * @param items
   *   Items of the list
   */
 final case class InputRichBlockList(items: List[InputRichBlockListItem] = List.empty) extends InputRichBlock
 
-/** A text paragraph, corresponding to the HTML tag <p>.
+/** A text paragraph, corresponding to the HTML tag &lt;p&gt;.
   *
   * @param text
   *   Text of the block
   */
 final case class InputRichBlockParagraph(text: RichText) extends InputRichBlock
 
-/** A preformatted text block, corresponding to the nested HTML tags <pre> and <code>.
+/** A preformatted text block, corresponding to the nested HTML tags &lt;pre&gt; and &lt;code&gt;.
   *
   * @param text
   *   Text of the block
@@ -66,7 +66,7 @@ final case class InputRichBlockParagraph(text: RichText) extends InputRichBlock
 final case class InputRichBlockPreformatted(text: RichText, language: Option[String] = Option.empty)
     extends InputRichBlock
 
-/** A block with a music file, corresponding to the HTML tag <audio>.
+/** A block with a music file, corresponding to the HTML tag &lt;audio&gt;.
   *
   * @param audio
   *   The audio. Caption is ignored.
@@ -76,7 +76,7 @@ final case class InputRichBlockPreformatted(text: RichText, language: Option[Str
 final case class InputRichBlockAudio(audio: InputMediaAudio, caption: Option[RichBlockCaption] = Option.empty)
     extends InputRichBlock
 
-/** A block quotation, corresponding to the HTML tag <blockquote> with custom attribute "expandable".
+/** A block quotation, corresponding to the HTML tag &lt;blockquote&gt; with custom attribute "expandable".
   *
   * @param text
   *   Content of the block
@@ -86,7 +86,7 @@ final case class InputRichBlockAudio(audio: InputMediaAudio, caption: Option[Ric
 final case class InputRichBlockExpandableBlockQuotation(text: RichText, credit: Option[RichText] = Option.empty)
     extends InputRichBlock
 
-/** A collage, corresponding to the custom HTML tag <tg-collage>.
+/** A collage, corresponding to the custom HTML tag &lt;tg-collage&gt;.
   *
   * @param blocks
   *   Elements of the collage
@@ -98,14 +98,14 @@ final case class InputRichBlockCollage(
   caption: Option[RichBlockCaption] = Option.empty
 ) extends InputRichBlock
 
-/** A footer, corresponding to the HTML tag <footer>.
+/** A footer, corresponding to the HTML tag &lt;footer&gt;.
   *
   * @param text
   *   Text of the block
   */
 final case class InputRichBlockFooter(text: RichText) extends InputRichBlock
 
-/** A block with a general file, corresponding to the custom HTML tag <tg-document>.
+/** A block with a general file, corresponding to the custom HTML tag &lt;tg-document&gt;.
   *
   * @param document
   *   The document. Caption is ignored.
@@ -115,17 +115,17 @@ final case class InputRichBlockFooter(text: RichText) extends InputRichBlock
 final case class InputRichBlockDocument(document: InputMediaDocument, caption: Option[RichBlockCaption] = Option.empty)
     extends InputRichBlock
 
-/** A block with a mathematical expression in LaTeX format, corresponding to the custom HTML tag <tg-math-block>.
+/** A block with a mathematical expression in LaTeX format, corresponding to the custom HTML tag &lt;tg-math-block&gt;.
   *
   * @param expression
   *   The mathematical expression in LaTeX format
   */
 final case class InputRichBlockMathematicalExpression(expression: String) extends InputRichBlock
 
-/** A divider, corresponding to the HTML tag <hr/>. */
+/** A divider, corresponding to the HTML tag &lt;hr/&gt;. */
 case object InputRichBlockDivider extends InputRichBlock
 
-/** A block quotation, corresponding to the HTML tag <blockquote>.
+/** A block quotation, corresponding to the HTML tag &lt;blockquote&gt;.
   *
   * @param blocks
   *   Content of the block
@@ -137,9 +137,9 @@ final case class InputRichBlockBlockQuotation(
   credit: Option[RichText] = Option.empty
 ) extends InputRichBlock
 
-/** A block with a “Thinking…” placeholder, corresponding to the custom HTML tag <tg-thinking>. The block may be used
-  * only in sendRichMessageDraft, therefore it can't be received in messages. See https://t.me/addemoji/AIActions for
-  * examples of custom emoji that are recommended for usage in the block.
+/** A block with a “Thinking…” placeholder, corresponding to the custom HTML tag &lt;tg-thinking&gt;. The block may be
+  * used only in sendRichMessageDraft, therefore it can't be received in messages. See https://t.me/addemoji/AIActions
+  * for examples of custom emoji that are recommended for usage in the block.
   *
   * @param text
   *   Text of the block. See https://t.me/addemoji/AIActions for examples of custom emoji that are recommended for usage
@@ -147,8 +147,8 @@ final case class InputRichBlockBlockQuotation(
   */
 final case class InputRichBlockThinking(text: RichText) extends InputRichBlock
 
-/** A block with a map, corresponding to the custom HTML tag <tg-map>. The map's width and height must not exceed 10000
-  * in total. The width and height ratio must be at most 20.
+/** A block with a map, corresponding to the custom HTML tag &lt;tg-map&gt;. The map's width and height must not exceed
+  * 10000 in total. The width and height ratio must be at most 20.
   *
   * @param location
   *   Location of the center of the map
@@ -169,7 +169,7 @@ final case class InputRichBlockMap(
   caption: Option[RichBlockCaption] = Option.empty
 ) extends InputRichBlock
 
-/** A slideshow, corresponding to the custom HTML tag <tg-slideshow>.
+/** A slideshow, corresponding to the custom HTML tag &lt;tg-slideshow&gt;.
   *
   * @param blocks
   *   Elements of the slideshow
@@ -181,7 +181,7 @@ final case class InputRichBlockSlideshow(
   caption: Option[RichBlockCaption] = Option.empty
 ) extends InputRichBlock
 
-/** A block with a photo, corresponding to the HTML tag <img>.
+/** A block with a photo, corresponding to the HTML tag &lt;img&gt;.
   *
   * @param photo
   *   The photo. Caption is ignored.
@@ -191,7 +191,7 @@ final case class InputRichBlockSlideshow(
 final case class InputRichBlockPhoto(photo: InputMediaPhoto, caption: Option[RichBlockCaption] = Option.empty)
     extends InputRichBlock
 
-/** A block with an animation, corresponding to the HTML tag <video>.
+/** A block with an animation, corresponding to the HTML tag &lt;video&gt;.
   *
   * @param animation
   *   The animation. Caption is ignored.
@@ -203,7 +203,8 @@ final case class InputRichBlockAnimation(
   caption: Option[RichBlockCaption] = Option.empty
 ) extends InputRichBlock
 
-/** A section heading, corresponding to the HTML tags <h1>, <h2>, <h3>, <h4>, <h5>, or <h6>.
+/** A section heading, corresponding to the HTML tags &lt;h1&gt;, &lt;h2&gt;, &lt;h3&gt;, &lt;h4&gt;, &lt;h5&gt;, or
+  * &lt;h6&gt;.
   *
   * @param text
   *   Text of the block
@@ -212,7 +213,7 @@ final case class InputRichBlockAnimation(
   */
 final case class InputRichBlockSectionHeading(text: RichText, size: Int) extends InputRichBlock
 
-/** An expandable block for details disclosure, corresponding to the HTML tag <details>.
+/** An expandable block for details disclosure, corresponding to the HTML tag &lt;details&gt;.
   *
   * @param summary
   *   Always shown summary of the block
@@ -228,7 +229,7 @@ final case class InputRichBlockDetails(
 ) extends InputRichBlock
 
 /** A block containing a list of buttons that are shown in one row, corresponding to the custom HTML tag
-  * <tg-button-row>.
+  * &lt;tg-button-row&gt;.
   *
   * @param buttons
   *   List of 1-8 buttons to send
@@ -240,7 +241,7 @@ final case class InputRichBlockButtons(
   align: Option[String] = Option.empty
 ) extends InputRichBlock
 
-/** A block with a video, corresponding to the HTML tag <video>.
+/** A block with a video, corresponding to the HTML tag &lt;video&gt;.
   *
   * @param video
   *   The video. Caption is ignored.
@@ -250,7 +251,7 @@ final case class InputRichBlockButtons(
 final case class InputRichBlockVideo(video: InputMediaVideo, caption: Option[RichBlockCaption] = Option.empty)
     extends InputRichBlock
 
-/** A quotation with centered text, loosely corresponding to the HTML tag <aside>.
+/** A quotation with centered text, loosely corresponding to the HTML tag &lt;aside&gt;.
   *
   * @param text
   *   Text of the block
