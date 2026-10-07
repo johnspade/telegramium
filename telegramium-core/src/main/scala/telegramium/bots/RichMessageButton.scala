@@ -10,8 +10,8 @@ package telegramium.bots
   *   regular link without borders). Apps may use theme-specific colors for the button background and text based on the
   *   style. The style “link” is allowed only for callback buttons.
   * @param url
-  *   Optional. HTTP or tg:// URL to be opened when the button is pressed. Links tg://user?id=<user_id> can be used to
-  *   mention a user by their identifier without using a username, if this is allowed by their privacy settings.
+  *   Optional. HTTP or tg:// URL to be opened when the button is pressed. Links tg://user?id=&lt;user_id&gt; can be
+  *   used to mention a user by their identifier without using a username, if this is allowed by their privacy settings.
   * @param callbackData
   *   Optional. Data to be sent in a callback query to the bot when the button is pressed, 1-64 bytes
   * @param webApp

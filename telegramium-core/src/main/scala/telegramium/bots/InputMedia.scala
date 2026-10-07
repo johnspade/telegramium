@@ -18,14 +18,14 @@ final case class InputMediaLocation(latitude: Float, longitude: Float, horizonta
   *
   * @param media
   *   File to send. Pass a file_id to send a file that exists on the Telegram servers (recommended), pass an HTTP URL
-  *   for Telegram to get a file from the Internet, or pass “attach://<file_attach_name>” to upload a new one using
-  *   multipart/form-data under <file_attach_name> name.
+  *   for Telegram to get a file from the Internet, or pass “attach://&lt;file_attach_name&gt;” to upload a new one
+  *   using multipart/form-data under &lt;file_attach_name&gt; name.
   * @param thumbnail
   *   Optional. Thumbnail of the file sent; can be ignored if thumbnail generation for the file is supported
   *   server-side. The thumbnail should be in JPEG format and less than 200 kB in size. A thumbnail's width and height
   *   should not exceed 320. Ignored if the file is not uploaded using multipart/form-data. Thumbnails can't be reused
-  *   and can be only uploaded as a new file, so you can pass “attach://<file_attach_name>” if the thumbnail was
-  *   uploaded using multipart/form-data under <file_attach_name>.
+  *   and can be only uploaded as a new file, so you can pass “attach://&lt;file_attach_name&gt;” if the thumbnail was
+  *   uploaded using multipart/form-data under &lt;file_attach_name&gt;.
   * @param caption
   *   Optional. Caption of the animation to be sent, 0-1024 characters after entities parsing
   * @param parseMode
@@ -67,8 +67,8 @@ final case class InputMediaLink(url: String) extends InputMedia
   *
   * @param media
   *   File to send. Pass a file_id to send a file that exists on the Telegram servers (recommended), pass an HTTP URL
-  *   for Telegram to get a file from the Internet, or pass "attach://<file_attach_name>" to upload a new one using
-  *   multipart/form-data under <file_attach_name> name.
+  *   for Telegram to get a file from the Internet, or pass "attach://&lt;file_attach_name&gt;" to upload a new one
+  *   using multipart/form-data under &lt;file_attach_name&gt; name.
   * @param caption
   *   Optional. Caption of the voice message to be sent, 0-1024 characters after entities parsing
   * @param parseMode
@@ -90,8 +90,8 @@ final case class InputMediaVoiceNote(
   *
   * @param media
   *   File to send. Pass a file_id to send a file that exists on the Telegram servers (recommended), pass an HTTP URL
-  *   for Telegram to get a file from the Internet, or pass “attach://<file_attach_name>” to upload a new one using
-  *   multipart/form-data under <file_attach_name> name.
+  *   for Telegram to get a file from the Internet, or pass “attach://&lt;file_attach_name&gt;” to upload a new one
+  *   using multipart/form-data under &lt;file_attach_name&gt; name.
   * @param caption
   *   Optional. Caption of the photo to be sent, 0-1024 characters after entities parsing
   * @param parseMode
@@ -116,18 +116,19 @@ final case class InputMediaPhoto(
   *
   * @param media
   *   File to send. Pass a file_id to send a file that exists on the Telegram servers (recommended), pass an HTTP URL
-  *   for Telegram to get a file from the Internet, or pass “attach://<file_attach_name>” to upload a new one using
-  *   multipart/form-data under <file_attach_name> name.
+  *   for Telegram to get a file from the Internet, or pass “attach://&lt;file_attach_name&gt;” to upload a new one
+  *   using multipart/form-data under &lt;file_attach_name&gt; name.
   * @param thumbnail
   *   Optional. Thumbnail of the file sent; can be ignored if thumbnail generation for the file is supported
   *   server-side. The thumbnail should be in JPEG format and less than 200 kB in size. A thumbnail's width and height
   *   should not exceed 320. Ignored if the file is not uploaded using multipart/form-data. Thumbnails can't be reused
-  *   and can be only uploaded as a new file, so you can pass “attach://<file_attach_name>” if the thumbnail was
-  *   uploaded using multipart/form-data under <file_attach_name>.
+  *   and can be only uploaded as a new file, so you can pass “attach://&lt;file_attach_name&gt;” if the thumbnail was
+  *   uploaded using multipart/form-data under &lt;file_attach_name&gt;.
   * @param cover
   *   Optional. Cover for the video in the message. Pass a file_id to send a file that exists on the Telegram servers
   *   (recommended), pass an HTTP URL for Telegram to get a file from the Internet, or pass
-  *   “attach://<file_attach_name>” to upload a new one using multipart/form-data under <file_attach_name> name.
+  *   “attach://&lt;file_attach_name&gt;” to upload a new one using multipart/form-data under &lt;file_attach_name&gt;
+  *   name.
   * @param startTimestamp
   *   Optional. Start timestamp for the video in the message
   * @param caption
@@ -169,12 +170,12 @@ final case class InputMediaVideo(
   *
   * @param media
   *   Video of the live photo to send. Pass a file_id to send a file that exists on the Telegram servers (recommended)
-  *   or pass “attach://<file_attach_name>” to upload a new one using multipart/form-data under <file_attach_name> name.
-  *   Sending live photos by a URL is currently unsupported.
+  *   or pass “attach://&lt;file_attach_name&gt;” to upload a new one using multipart/form-data under
+  *   &lt;file_attach_name&gt; name. Sending live photos by a URL is currently unsupported.
   * @param photo
   *   The static photo to send. Pass a file_id to send a file that exists on the Telegram servers (recommended) or pass
-  *   “attach://<file_attach_name>” to upload a new one using multipart/form-data under <file_attach_name> name. Sending
-  *   live photos by a URL is currently unsupported.
+  *   “attach://&lt;file_attach_name&gt;” to upload a new one using multipart/form-data under &lt;file_attach_name&gt;
+  *   name. Sending live photos by a URL is currently unsupported.
   * @param caption
   *   Optional. Caption of the live photo to be sent, 0-1024 characters after entities parsing
   * @param parseMode
@@ -231,14 +232,14 @@ final case class InputMediaVenue(
   *
   * @param media
   *   File to send. Pass a file_id to send a file that exists on the Telegram servers (recommended), pass an HTTP URL
-  *   for Telegram to get a file from the Internet, or pass “attach://<file_attach_name>” to upload a new one using
-  *   multipart/form-data under <file_attach_name> name.
+  *   for Telegram to get a file from the Internet, or pass “attach://&lt;file_attach_name&gt;” to upload a new one
+  *   using multipart/form-data under &lt;file_attach_name&gt; name.
   * @param thumbnail
   *   Optional. Thumbnail of the file sent; can be ignored if thumbnail generation for the file is supported
   *   server-side. The thumbnail should be in JPEG format and less than 200 kB in size. A thumbnail's width and height
   *   should not exceed 320. Ignored if the file is not uploaded using multipart/form-data. Thumbnails can't be reused
-  *   and can be only uploaded as a new file, so you can pass “attach://<file_attach_name>” if the thumbnail was
-  *   uploaded using multipart/form-data under <file_attach_name>.
+  *   and can be only uploaded as a new file, so you can pass “attach://&lt;file_attach_name&gt;” if the thumbnail was
+  *   uploaded using multipart/form-data under &lt;file_attach_name&gt;.
   * @param caption
   *   Optional. Caption of the document to be sent, 0-1024 characters after entities parsing
   * @param parseMode
@@ -262,8 +263,8 @@ final case class InputMediaDocument(
   *
   * @param media
   *   File to send. Pass a file_id to send a file that exists on the Telegram servers (recommended), pass an HTTP URL
-  *   for Telegram to get a .WEBP sticker from the Internet, or pass “attach://<file_attach_name>” to upload a new
-  *   .WEBP, .TGS, or .WEBM sticker using multipart/form-data under <file_attach_name> name.
+  *   for Telegram to get a .WEBP sticker from the Internet, or pass “attach://&lt;file_attach_name&gt;” to upload a new
+  *   .WEBP, .TGS, or .WEBM sticker using multipart/form-data under &lt;file_attach_name&gt; name.
   * @param emoji
   *   Optional. Emoji associated with the sticker; only for just uploaded stickers
   */
@@ -273,14 +274,14 @@ final case class InputMediaSticker(media: IFile, emoji: Option[String] = Option.
   *
   * @param media
   *   File to send. Pass a file_id to send a file that exists on the Telegram servers (recommended), pass an HTTP URL
-  *   for Telegram to get a file from the Internet, or pass “attach://<file_attach_name>” to upload a new one using
-  *   multipart/form-data under <file_attach_name> name.
+  *   for Telegram to get a file from the Internet, or pass “attach://&lt;file_attach_name&gt;” to upload a new one
+  *   using multipart/form-data under &lt;file_attach_name&gt; name.
   * @param thumbnail
   *   Optional. Thumbnail of the file sent; can be ignored if thumbnail generation for the file is supported
   *   server-side. The thumbnail should be in JPEG format and less than 200 kB in size. A thumbnail's width and height
   *   should not exceed 320. Ignored if the file is not uploaded using multipart/form-data. Thumbnails can't be reused
-  *   and can be only uploaded as a new file, so you can pass “attach://<file_attach_name>” if the thumbnail was
-  *   uploaded using multipart/form-data under <file_attach_name>.
+  *   and can be only uploaded as a new file, so you can pass “attach://&lt;file_attach_name&gt;” if the thumbnail was
+  *   uploaded using multipart/form-data under &lt;file_attach_name&gt;.
   * @param caption
   *   Optional. Caption of the audio to be sent, 0-1024 characters after entities parsing
   * @param parseMode

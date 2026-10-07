@@ -8,8 +8,8 @@ package telegramium.bots.client
   *   Pass True to keep the original gift text, sender and receiver in the upgraded gift
   * @param starCount
   *   The amount of Telegram Stars that will be paid for the upgrade from the business account balance. If
-  *   gift.prepaid_upgrade_star_count > 0, then pass 0, otherwise, the can_transfer_stars business bot right is required
-  *   and gift.upgrade_star_count must be passed.
+  *   gift.prepaid_upgrade_star_count &gt; 0, then pass 0, otherwise, the can_transfer_stars business bot right is
+  *   required and gift.upgrade_star_count must be passed.
   */
 final case class UpgradeGiftReq(
   businessConnectionId: String,
